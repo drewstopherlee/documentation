@@ -71,7 +71,7 @@ sudo apt-get install unattended-upgrades
 ```sh
 sudo dpkg-reconfigure --priority=low unattended-upgrades
 ```
-4. Select <kbd>`<Yes>`</kbd> to automatically download and install updates.
+4. Select <kbd>Yes</kbd> to automatically download and install updates.
 
 ## Additional Accounts, Sudoers, Disable Root
 
