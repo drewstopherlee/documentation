@@ -55,6 +55,7 @@ This Markdown cheat sheet provides a quick overview of all the Markdown syntax e
 1. First ordered item
 2. Second ordered item
 3. Third ordered item
+
 ```
 1. First ordered item
 2. Second ordered item
@@ -66,6 +67,7 @@ This Markdown cheat sheet provides a quick overview of all the Markdown syntax e
 - First unordered item
 - Second unordered item
 - Third unordered item
+
 ```
 - First unordered item
 - Second unordered item
@@ -86,25 +88,25 @@ lines of
 code
 ```
 Use three ticks (no spaces) on the lines before and after multiple lines of code
+````md
 ```
-` ` `
 multiple
 lines of
 code
-` ` `
 ```
+````
 #### Example 3 (Syntax Highlighting):
 ```javascript
 // the hello world program
 console.log('Hello World');
 ```
 You can add the name of the language at the end of the first set of three ticks (no spaces) for syntax highlighting
-```
-` ` ` javascript
+````md
+``` javascript
 // the hello world program
 console.log('Hello World');
-` ` `
 ```
+````
 **Note that not all markdown applications support examples 2 and 3*
 
 ---
