@@ -7,7 +7,7 @@ tags: [typography]
 math: true
 mermaid: true
 image:
-  path: /commons/devices-mockup.png
+  path: https://raw.githubusercontent.com/cotes2020/chirpy-images/5726bfed63717bf42ad65de11ede3683d7b6e561/commons/devices-mockup.png
   width: 800
   height: 500
   alt: Responsive rendering of Chirpy theme on multiple devices.
@@ -99,30 +99,30 @@ Click the hook will locate the footnote[^footnote], and here is another footnote
 
 - Default (with caption)
 
-![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" }
+![Desktop View](https://raw.githubusercontent.com/cotes2020/chirpy-images/main/posts/20190808/mockup.png){: width="972" height="589" }
 _Full screen width and center alignment_
 
 <br>
 
 - Shadow
 
-![Window shadow](/posts/20190808/window.png){: .shadow width="1548" height="864" .w-75 }
+![Window shadow](https://raw.githubusercontent.com/cotes2020/chirpy-images/5726bfed63717bf42ad65de11ede3683d7b6e561/posts/20190808/window.png){: .shadow width="1548" height="864" .w-75 }
 _shadow effect (visible in light mode)_
 
 <br>
 
 - Left aligned
 
-![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-75 .normal}
+![Desktop View](https://raw.githubusercontent.com/cotes2020/chirpy-images/main/posts/20190808/mockup.png){: width="972" height="589" .w-75 .normal}
 
 - Float to left
 
-  ![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-50 .left}
+  ![Desktop View](https://raw.githubusercontent.com/cotes2020/chirpy-images/main/posts/20190808/mockup.png){: width="972" height="589" .w-50 .left}
   Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum. Phasellus a tortor aliquam, tristique felis sit amet, elementum enim. Integer vestibulum vitae nulla nec pretium.
 
 - Float to right
 
-  ![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-50 .right}
+  ![Desktop View](https://raw.githubusercontent.com/cotes2020/chirpy-images/main/posts/20190808/mockup.png){: width="972" height="589" .w-50 .right}
   Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum. Phasellus a tortor aliquam, tristique felis sit amet, elementum enim. Integer vestibulum vitae nulla nec pretium.
 
 ## Mermaid SVG
