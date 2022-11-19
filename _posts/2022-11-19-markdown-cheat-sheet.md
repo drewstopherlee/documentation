@@ -1,5 +1,6 @@
 ---
 title: Markdown Cheat Sheet
+author: andrew
 date: 2022-11-19 03:42:00 -0500
 categories: [Languages]
 tags: [markdown,code,markup,syntax,language]
