@@ -147,16 +147,16 @@ sudo nano 01-netcfg.yaml
 ```yaml
 network:
     version: 2
-        ethernets:
-            eth0:
-                dhcp4: no
-                addresses:
-                    - 10.0.0.100/24
-                nameservers:
+    ethernets:
+        eth0:
+            dhcp4: no
+            addresses:
+                - 10.0.0.100/24
+            nameservers:
                 addresses: [1.1.1.1, 1.0.0.1]
-                routes:
-                    - to: default
-                      via: 10.0.0.1
+            routes:
+                - to: default
+                    via: 10.0.0.1
 ```
 4. Save and close the file using <kbd>Ctrl+X</kbd>, <kbd>Y</kbd>, <kbd>Enter</kbd>, then apply the new `netplan` using:
 ```sh
