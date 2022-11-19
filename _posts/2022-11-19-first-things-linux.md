@@ -212,7 +212,7 @@ Leaving `NTP=` uncommented and assigned to an empty string resets the list of NT
 
 6. Restart `systemd-timesyncd` using `sudo systemctl restart systemd-timesyncd.service`.
 7. Verify that your system is using Google Public NTP with `timedatectl show-timesync | grep ServerName`. If successfully configured, the output will show: 
-```bash
+```sh
 ServerName=time.google.com
 ```
 
