@@ -203,7 +203,7 @@ sudo timedatectl set-timezone America/New_York
 3. Check the current NTP configuration using `systemctl status systemd-timesyncd`. If you wish to change the NTP server, move on to the next step.
 4. Edit the `timesyncd` configuration using `sudo nano /etc/systemd/timesyncd.conf`.
 5. Set the content of the `[Time]` block to:
-```dosini
+```
 [Time]
 NTP=
 FallbackNTP=time.google.com
