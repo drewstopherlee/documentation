@@ -19,9 +19,9 @@ timezone: America/New_York
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: shaffer(dot)network docs                          # the main title
+title: homelab docs                          # the main title
 
-tagline: Documentation for my entire homelab   # it will display as the sub-title
+tagline: documentation for my entire homelab   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll site for hosting documentation.
