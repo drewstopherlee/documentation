@@ -1,7 +1,7 @@
 ---
 title: Markdown Cheat Sheet
-date: 2022-11-19 03:42:00 -500
-categories: [languages]
+date: 2022-11-19 03:42:00 -0500
+categories: [Languages]
 tags: [markdown,code,markup,syntax,language]
 ---
 
