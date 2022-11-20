@@ -13,7 +13,8 @@ pin: true
 ## Business
 
 #### Accounting / Invoicing
-- [ ] [Invoice Ninja](https://www.invoiceninja.org/) ([GitHub](https://github.com/invoiceninja/invoiceninja)) - Invoicing, Quotes, Expenses, Time-Tracking built with Laravel & Flutter
+- [ ] [Invoice Ninja](https://www.invoiceninja.org/) ([GitHub](https://github.com/invoiceninja/invoiceninja))
+  - Invoicing, Quotes, Expenses, Time-Tracking built with Laravel & Flutter
 - [ ] 
 
 #### CRM / ERP
