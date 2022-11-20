@@ -392,9 +392,9 @@ sudo systemctl enable containerd.service
 {: .prompt-info }
 
 You will need:
-- The latest version of Docker installed and working. (see [here]())
+- The latest version of Docker installed and working. (see [here](/#docker-installation-steps))
 - `sudo` access on the machine you wish to install the Portainer Agent on.
-- Port `9001` accessible on this machine from the Portainer Server instance.
+- Port `9001` accessible on this machine from the Portainer Server instance. (see [here](/#configure-ufw))
 
 Run the following command to deploy the Portainer Agent:
 ```sh
