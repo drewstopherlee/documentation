@@ -58,7 +58,7 @@ sudo systemctl restart ssh
 
 Now that we're logged into the Linux machine without a password, we will update the machine and configure automatic updates.
 
-1. Run an `apt-get update` and `apt-get upgrade`:
+1. Update the `apt` package index and install any updates:
 ```sh
 sudo apt-get update
 sudo apt-get upgrade
@@ -216,8 +216,192 @@ Leaving `NTP=` uncommented and assigned to an empty string resets the list of NT
 ServerName=time.google.com
 ```
 
-## Configuring UFW
+## Configure UFW
 
+1. Check the status of `ufw` by running `sudo ufw status`.
+2. To start off, deny all incoming traffic and allow all outgoing traffic:
+```sh
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+```
+3. Allow incoming SSH connections:
+```sh
+sudo ufw allow ssh
+```
 
+You can also allow other services and ports, such as in the following examples:
+```sh
+sudo ufw allow 80                   ## or sudo ufw allow http
+sudo ufw allow https                ## or sudo ufw allow 443
+sudo ufw allow 6000:6007/tcp        ## to allow port ranges (6000-6007)
+sudo ufw allow from 203.0.113.4     ## to allow from a specific IP address
+sudo ufw allow from 203.0.113.0/24  ## to allow from an entire subnet
 
+sudo ufw allow 9001                 ## for Portainer install in a later section
+```
 
+4. Enable the `ufw` firewall and check the status to see currently configured rules:
+```sh
+sudo ufw enable
+sudo ufw status verbose
+```
+
+## Install `fail2ban`
+
+> `fail2ban` is a useful and customizable tool for clocking malicious password-challenge login attempts, but this setup does not properly restrict malicious key-based login attempts.
+{: .prompt-warning }
+
+1. Install `fail2ban` using the `apt` package index:
+```sh
+sudo apt update
+sudo apt install fail2ban
+```
+2. Verify that `fail2ban` is running:
+```sh
+sudo systemctl status fail2ban
+```
+3. Duplicate the `fail2ban` config files before editing them:
+```sh
+sudo cp /etc/fail2ban/fail2ban.{conf,local}
+sudo cp /etc/fail2ban/jail.{conf,local}
+```
+4. Edit the `local` version of the fail2ban config...
+```sh
+sudo nano /etc/fail2ban/fail2ban.local
+```
+...and edit the following config items:
+```console
+loglevel = INFO
+logtarget = /var/log/fail2ban.log
+```
+Save and exit using <kbd>Ctrl+X</kbd>, <kbd>Y</kbd>, <kbd>Enter</kbd>.
+5. Edit the `local` version of the jail config...
+```sh
+sudo nano /etc/fail2ban/jail.local
+```
+...and edit the following config items:
+```console
+bantime = 10m
+findtime = 10m
+maxretry = 5
+backend = systemd       ## For Ubuntu 20.04+, use systemd
+```
+Save and exit using <kbd>Ctrl+X</kbd>, <kbd>Y</kbd>, <kbd>Enter</kbd>.
+6. Restart the `fail2ban` service and check the status again:
+```sh
+sudo systemctl restart fail2ban
+sudo systemctl status fail2ban
+```
+7. Check that a `jail` has been set up. (`fail2ban` should automatically create one for SSH.)
+```sh
+sudo fail2ban-client status
+sudo fail2ban-client status sshd
+```
+
+# Raspberry Pi Post-Installation Steps
+
+## POE+ HAT Fan Curve
+
+1. Check your current fan config in `/sys/class/thermal/`:
+```sh
+cd /sys/class/thermal/ && ls
+```
+If there is only one device listed, such as `cooling_device0`, continue to the Step 3. 
+2. Otherwise, check the individual cooling devices to see which is the POE+ HAT fan:
+```sh
+cat cooling_device0/type
+cat cooling_device1/type
+# cat cooling_deviceX/type etc...
+```
+The `cat` response should be `rpi-poe-fan` or `pwm-fan`. <br>
+You can alternatively check which fan is running:
+```sh
+cat cooling_device0/cur_state
+cat cooling_device1/cur_state 
+```
+The response of a running fan will be `1`, `2`, `3`, or `4`. A response of `0` is a fan that is not currently running.
+3. Create a new `udev` rule...
+```sh
+sudo nano /etc/udev/rules.d/50-rpi-fan.rules
+```
+...and paste the following into the terminal:
+```console
+SUBSYSTEM=="thermal"
+KERNEL=="thermal_zone0"
+
+# If the temp hits 65C, turn on the fan. Turn it off again when it goes back down to 60C.
+ATTR{trip_point_3_temp}="65000"
+ATTR{trip_point_3_hyst}="5000"
+#
+# If the temp hits 70C, higher RPM.
+ATTR{trip_point_2_temp}="70000"
+ATTR{trip_point_2_hyst}="2000"
+#
+# If the temp hits 75C, higher RPM.
+ATTR{trip_point_1_temp}="75000"
+ATTR{trip_point_1_hyst}="2000"
+#
+# If the temp hits 80C, highest RPM.
+ATTR{trip_point_0_temp}="80000"
+ATTR{trip_point_0_hyst}="5000"
+```
+> Note that the `ATTR{trip_point_X_temp}=` value is the temperature (in Celsius, x1000) at which the fan speed increases. Also note that the trip point numbering is reversed, where `0` is the highest speed and `3` is the lowest.
+{: .prompt-tip }
+
+Save and exit using <kbd>Ctrl+X</kbd>, <kbd>Y</kbd>, <kbd>Enter</kbd>.
+
+4. Apply the new `udev` rule:
+```sh
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
+
+# Docker Installation Steps
+
+> This section is specific to Ubuntu installations, adapted from Docker's official documentation, [here](https://docs.docker.com/engine/install/ubuntu/) and [here](https://docs.docker.com/engine/install/linux-postinstall/).
+{: .prompt-info }
+
+1. Update the `apt` package index and install the following packages to allow `apt` to use a repository over HTTPS:
+```sh
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg lsb-release
+```
+2. Add Docker's official GPG key:
+```sh
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
+3. Use the following command to set up the repository:
+```sh
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+4. Update the `apt` package index and install the Docker Engine, containerd, and Docker Compose:
+```sh
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
+5. To manage Docker as a non-root user, create the `docker` group and add your user, then refresh the group to apply the changes:
+```sh
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
+6. Configure Docker to start on boot with `systemd`:
+```sh
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+```
+
+# Portainer Installation Steps
+
+> This section outlines using Portainer Agent to add a Docker standalone environment to an existing Portainer isntance. See Portainer's documentation [here](https://docs.portainer.io/start/install/agent/docker/linux) for more info.
+{: .prompt-info }
+
+You will need:
+- The latest version of Docker installed and working.
+- `sudo` access on the machine you wish to install the Portainer Agent on.
+- Port `9001` accessible on this machine from the Portainer Server instance.
+
+Run the following command to deploy the Portainer Agent:
+```sh
+docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent:latest
+```
