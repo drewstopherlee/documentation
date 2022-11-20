@@ -216,7 +216,7 @@ Leaving `NTP=` uncommented and assigned to an empty string resets the list of NT
 ServerName=time.google.com
 ```
 
-## Configure UFW
+## Configure UFW {#configure-ufw}
 
 1. Check the status of `ufw` by running `sudo ufw status`.
 2. To start off, deny all incoming traffic and allow all outgoing traffic:
@@ -350,7 +350,7 @@ Save and exit using <kbd>Ctrl+X</kbd>, <kbd>Y</kbd>, <kbd>Enter</kbd>.
 sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
 
-# Docker Installation Steps
+# Docker Installation Steps {#docker-installation-steps}
 
 > This section is specific to Ubuntu installations, adapted from Docker's official documentation, [here](https://docs.docker.com/engine/install/ubuntu/) and [here](https://docs.docker.com/engine/install/linux-postinstall/).
 {: .prompt-info }
