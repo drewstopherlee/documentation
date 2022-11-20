@@ -325,26 +325,21 @@ The response of a running fan will be `1`, `2`, `3`, or `4`. A response of `0` i
 sudo nano /etc/udev/rules.d/50-rpi-fan.rules
 ```
 ...and paste the following into the terminal:
-```console
+
+````console
 SUBSYSTEM=="thermal"
 KERNEL=="thermal_zone0"
 
-# If the temp hits 65C, turn on the fan. Turn it off again when it goes back down to 60C.
-ATTR{trip_point_3_temp}="65000"
+ATTR{trip_point_3_temp}="65000"     # If the temp hits 65C, turn on the fan.
 ATTR{trip_point_3_hyst}="5000"
-#
-# If the temp hits 70C, higher RPM.
-ATTR{trip_point_2_temp}="70000"
+ATTR{trip_point_2_temp}="70000"     # If the temp hits 70C, higher RPM.
 ATTR{trip_point_2_hyst}="2000"
-#
-# If the temp hits 75C, higher RPM.
-ATTR{trip_point_1_temp}="75000"
+ATTR{trip_point_1_temp}="75000"     # If the temp hits 75C, higher RPM.
 ATTR{trip_point_1_hyst}="2000"
-#
-# If the temp hits 80C, highest RPM.
-ATTR{trip_point_0_temp}="80000"
+ATTR{trip_point_0_temp}="80000"     # If the temp hits 80C, highest RPM.
 ATTR{trip_point_0_hyst}="5000"
-```
+````
+
 > Note that the `ATTR{trip_point_X_temp}=` value is the temperature (in Celsius, x1000) at which the fan speed increases. Also note that the trip point numbering is reversed, where `0` is the highest speed and `3` is the lowest.
 {: .prompt-tip }
 
