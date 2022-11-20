@@ -284,7 +284,7 @@ sudo nano /etc/fail2ban/jail.local
 bantime = 10m
 findtime = 10m
 maxretry = 5
-backend = systemd       ## For Ubuntu 20.04+, use systemd
+backend = systemd       # For Ubuntu 20.04+, use systemd
 ```
 Save and exit using <kbd>Ctrl+X</kbd>, <kbd>Y</kbd>, <kbd>Enter</kbd>.
 6. Restart the `fail2ban` service and check the status again:
