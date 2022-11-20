@@ -1,6 +1,15 @@
+---
+title: Homelab Ideas
+author: andrew
+date: 2022-09-01 09:22:00 -0500
+categories: [Homelab]
+tags: [docker, self host, selfhosted, containers, github, software, business, personal, accounting, invoicing, crm, erp, help desk, inventory, media, organization, smart home, passwords, wiki, backups, email, monitoring, networking, security, sysadmin, homelab]
+pin: true
+---
+
 # Homelab Ideas
 
--------------------------------------------------------------------------------------------------
+---
 ## Business
 
 #### Accounting / Invoicing
@@ -52,7 +61,7 @@
 - [ ] 
 - [ ] 
 
--------------------------------------------------------------------------------------------------
+---
 ## Personal
 
 #### Media
@@ -145,7 +154,7 @@ A community-supported supercharged version of paperless: scan, index and archive
 - [ ] 
 - [ ] 
 
--------------------------------------------------------------------------------------------------
+---
 ## SysAdmin
 
 #### Backups & Updates
