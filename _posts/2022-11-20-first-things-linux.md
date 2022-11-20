@@ -22,7 +22,7 @@ This section will cover how to configure PuTTY to sign into your machine via SSH
 4. After the keys are generated, add a descriptive Key comment to help you easily identify your key and Save both keys (Public and Private Keys) to a secure location. **Do NOT close the PuTTYgen window yet.**
 > Pay extra attention to where you save the Private Key because if anyone steals this key it can perform logins to your server without the need to enter a password.
 {: .prompt-warning }
-5. Copy the text in the `Public key for pasting into authorized_keys file:` and paste it into a new text document. 
+5. Copy the text from `Public key for pasting into authorized_keys file:` and paste it into a new text document. 
 6. SSH into the Linux machine as the user you want to login as without a password, then edit the `authorized_keys` file. 
 ```sh
 pwd                 ## Check to see if you are in the correct $HOME location
@@ -397,7 +397,7 @@ sudo systemctl enable containerd.service
 {: .prompt-info }
 
 You will need:
-- The latest version of Docker installed and working.
+- The latest version of Docker installed and working. (see [here]())
 - `sudo` access on the machine you wish to install the Portainer Agent on.
 - Port `9001` accessible on this machine from the Portainer Server instance.
 
