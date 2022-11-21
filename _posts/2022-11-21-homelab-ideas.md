@@ -1,7 +1,7 @@
 ---
 title: Homelab Ideas
 author: andrew
-date: 2022-11-20 10:32:00 -0500
+date: 2022-11-21 00:04:00 -0500
 categories: [Homelab]
 tags: [docker, self host, selfhosted, containers, github, software, business, personal, accounting, invoicing, crm, erp, help desk, inventory, media, organization, smart home, passwords, wiki, backups, email, monitoring, networking, security, sysadmin, homelab]
 pin: true
