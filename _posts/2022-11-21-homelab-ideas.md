@@ -12,12 +12,12 @@ pin: true
 ---
 ## Business
 
-#### Accounting / Invoicing
+### Accounting / Invoicing
 - [ ] [Invoice Ninja](https://www.invoiceninja.org/) ([GitHub](https://github.com/invoiceninja/invoiceninja))
   - Invoicing, Quotes, Expenses, Time-Tracking built with Laravel & Flutter
 - [ ] 
 
-#### CRM / ERP
+### CRM / ERP
 - [ ] [Dolibarr](https://www.dolibarr.org/) ([GitHub](https://github.com/dolibarr))
   - A modern software package that helps manage your organization's activity (contacts, suppliers, invoices, orders, stocks, agenda…). Use it as a standalone application or as a web application to access it from the Internet or a LAN.
 - [ ] [Odoo](https://www.odoo.com/) ([GitHub](https://github.com/odoo/odoo))
@@ -25,14 +25,14 @@ pin: true
 - [ ] [SuiteCRM](https://suitecrm.com/) ([GitHub](https://github.com/salesagility/SuiteCRM))
 - [ ] 
 
-#### Help Desk / Ticketing
+### Help Desk / Ticketing
 - [ ] [Trudesk](http://trudesk.io/) ([GitHub](https://github.com/polonel/trudesk))
   - Open-source help desk/ticketing solution
 - [ ] [OTOBO](https://otobo.de/en/) ([GitHub](https://github.com/RotherOSS/))
   - Web-based ticketing systems used for Customer Service, Help Desk, IT Service Management
 - [ ] 
 
-#### Inventory/Asset Management
+### Inventory/Asset Management
 - [ ] [PartKeepr](https://www.partkeepr.org/) ([GitHub](https://github.com/partkeepr/PartKeepr))
   - Open source parts/inventory management ([Docker Compose file](https://github.com/partkeepr/PartKeepr/blob/master/docker/development/docker-compose.yml))
 - [ ] [Snipe-IT](https://snipeitapp.com/product/open-source) ([GitHub](https://github.com/snipe/snipe-it))
@@ -44,7 +44,7 @@ pin: true
 ---
 ## Personal
 
-#### Media
+### Media
 - [ ] [MeTube (GitHub)](https://github.com/alexta69/metube)
   - YouTube-DL web UI
 - [ ] [AllTube](https://www.alltubedownload.net/) ([GitHub](https://github.com/Rudloff/alltube))
@@ -55,7 +55,7 @@ pin: true
   - Web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database
 - [ ] 
 
-#### Organization
+### Organization
 - [ ] [Paperless-ngx](https://paperless-ngx.readthedocs.io/en/latest/) ([GitHub](https://github.com/jonaswinkler/paperless-ng)
   - A community-supported supercharged version of paperless: scan, index and archive all your physical documents
 - [ ] [Tandoor](https://tandoor.dev/)
@@ -64,7 +64,7 @@ pin: true
   - A self-hosted website to manage all your collections
 - [ ] 
 
-#### Password & Bookmark Managers
+### Password & Bookmark Managers
 - [ ] [LinkWarden (GitHub)](https://github.com/Daniel31x13/link-warden)
   - A self-hosted bookmark + archive manager to store your useful links.
 - [ ] [Reminiscence (GitHub)](https://github.com/kanishka-linux/reminiscence)
@@ -73,10 +73,10 @@ pin: true
   - A web application featuring some handy password tools, including a password generator, strength checker and HaveIBeenPwned breach checker
 - [ ] 
 
-#### Smart Home
+### Smart Home
 - [ ] 
 
-#### Social
+### Social
 - [ ] [Monica](https://github.com/monicahq/monica/blob/main/docs/installation/providers/docker.md)
   - Personal CRM. Remember everything about your friends, family and business relationships.
 - [ ] [Webtrees](http://www.webtrees.net/) ([GitHub](https://github.com/fisharebest/webtrees)) [[Docker GitHub](https://github.com/H2CK/webtrees)]
@@ -85,7 +85,7 @@ pin: true
   - Lightweight CalDAV and CardDAV server
 - [ ] 
 
-#### Wikis / Notes
+### Wikis / Notes
 - [ ] [BookStack](https://www.bookstackapp.com/) ([GitHub](https://github.com/BookStackApp/BookStack))
   - A simple, self-hosted, easy-to-use platform for organizing and storing information
 - [ ] [Trilium (GitHub)](https://github.com/zadam/trilium)
@@ -95,7 +95,7 @@ pin: true
 ---
 ## SysAdmin
 
-#### Backups & Updates
+### Backups & Updates
 - [ ] [ArchiveBox](https://archivebox.io/)
   - Self-hosted internet archiving solution
 - [ ] [Syncthing (GitHub)](https://github.com/syncthing/syncthing)
@@ -103,7 +103,7 @@ pin: true
 - [x] [Watchtower](https://containrrr.dev/watchtower/) ([GitHub](https://github.com/containrrr/watchtower))
 - [ ] 
 
-#### Docker
+### Docker
 - [ ] [Dockprom (GitHub)](https://github.com/stefanprodan/dockprom)
   - Docker host and container monitoring with Prometheus, Grafana, cAdvisor, NodeExporter and AlertManager
 - [ ] [cAdvisor (GitHub)](https://github.com/google/cadvisor)
@@ -111,7 +111,7 @@ pin: true
 - [x] [Watchtower](https://containrrr.dev/watchtower/) ([GitHub](https://github.com/containrrr/watchtower))
 - [ ] 
 
-#### Email
+### Email
 - [ ] [docker-mailserver](https://docker-mailserver.github.io/docker-mailserver/edge/) ([GitHub](https://github.com/docker-mailserver/docker-mailserver))
   - Production-ready fullstack but simple mail server (SMTP, IMAP, LDAP, Antispam, Antivirus, etc.) running inside a container
 - [ ] [Mailcow](https://mailcow.email/) ([GitHub](https://github.com/mailcow/mailcow-dockerized))
@@ -121,7 +121,7 @@ pin: true
   - Simple, modern, lightweight & fast web-based email client. (It is an actively developed fork of RainLoop)
 - [ ] 
 
-#### Monitoring
+### Monitoring
 - [ ] [Dockprom (GitHub)](https://github.com/stefanprodan/dockprom)
   - Docker host and container monitoring with Prometheus, Grafana, cAdvisor, NodeExporter and AlertManager
 - [ ] [cAdvisor (GitHub)](https://github.com/google/cadvisor)
@@ -134,7 +134,7 @@ pin: true
   - Easy-to-use, integrated, glanceable, and open web-based interface for your servers
 - [ ] 
 
-#### Networking
+### Networking
 - [ ] [Ralph](https://ralph.allegro.tech/) ([GitHub](https://github.com/allegro/ralph))
   - CMDB / Asset Management system for data center and back office hardware
 - [ ] [WireShark](https://www.wireshark.org/)
@@ -143,13 +143,13 @@ pin: true
   - A complete network graphing solution
 - [ ] 
 
-#### Remote Access
+### Remote Access
 - [ ] [Apache Guacamole](https://guacamole.apache.org/) ([GitHub Repos](https://github.com/search?utf8=%E2%9C%93&q=repo%3Aapache%2Fguacamole-server+repo%3Aapache%2Fguacamole-client+repo%3Aapache%2Fguacamole-website&type=Repositories&ref=searchresults))
   - A browser-accessible, clientless remote desktop gateway. Supports protocols like VNC, RDP, and SSH.
 - [ ] 
 
 
-#### Security
+### Security
 - [ ] [BounCA](https://bounca.org/index.html)
   - Web-GUI based X509.v3 certificates management tool
 - [ ] 
