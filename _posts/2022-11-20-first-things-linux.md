@@ -330,13 +330,17 @@ sudo nano /etc/udev/rules.d/50-rpi-fan.rules
 SUBSYSTEM=="thermal"
 KERNEL=="thermal_zone0"
 
-ATTR{trip_point_3_temp}="65000"     # If the temp hits 65C, turn on the fan.
+# If the temp hits 65C, turn on the fan.
+ATTR{trip_point_3_temp}="65000"
 ATTR{trip_point_3_hyst}="5000"
-ATTR{trip_point_2_temp}="70000"     # If the temp hits 70C, higher RPM.
+# If the temp hits 70C, higher RPM.
+ATTR{trip_point_2_temp}="70000"     
 ATTR{trip_point_2_hyst}="2000"
-ATTR{trip_point_1_temp}="75000"     # If the temp hits 75C, higher RPM.
+# If the temp hits 75C, higher RPM.
+ATTR{trip_point_1_temp}="75000"     
 ATTR{trip_point_1_hyst}="2000"
-ATTR{trip_point_0_temp}="80000"     # If the temp hits 80C, highest RPM.
+# If the temp hits 80C, highest RPM.
+ATTR{trip_point_0_temp}="80000"     
 ATTR{trip_point_0_hyst}="5000"
 ````
 
